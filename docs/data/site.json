@@ -1,43 +1,82 @@
 {
-  "mode": "demo",
-  "generated_at": "2026-09-13T07:30:00Z",
-  "model": "heuristic-v0",
+  "mode": "live",
+  "generated_at": "2026-09-13T08:00:00Z",
+  "model": "form-poisson-v1",
+  "source_note": "13 Eylül 2026 gerçek Premier League fikstürü; tahminler güncel lig formu ve gol performansından türetilmiştir.",
   "league": {
-    "matches": 24,
-    "goals_per_match": 2.88,
-    "first_half_btts_rate": 0.29,
-    "second_half_btts_rate": 0.42
+    "matches": null,
+    "goals_per_match": null,
+    "first_half_btts_rate": null,
+    "second_half_btts_rate": null
   },
   "matches": [
     {
-      "home_team": "Arsenal",
-      "away_team": "Manchester City",
-      "kickoff": "2026-09-19T14:00:00Z",
-      "home_win": 0.39,
-      "draw": 0.28,
-      "away_win": 0.33,
-      "first_half_btts": 0.34,
-      "second_half_btts": 0.56,
-      "confidence": 0.62,
-      "model_label": "Demo"
+      "home_team": "Coventry City",
+      "away_team": "Brighton & Hove Albion",
+      "kickoff": "2026-09-13T13:00:00Z",
+      "home_win": 0.18,
+      "draw": 0.27,
+      "away_win": 0.55,
+      "first_half_btts": 0.14,
+      "second_half_btts": 0.24,
+      "predicted_score": "0-2",
+      "confidence": 0.72,
+      "model_label": "Form + Poisson"
     },
     {
-      "home_team": "Liverpool",
-      "away_team": "Chelsea",
-      "kickoff": "2026-09-20T15:30:00Z",
-      "home_win": 0.51,
-      "draw": 0.25,
-      "away_win": 0.24,
-      "first_half_btts": 0.41,
-      "second_half_btts": 0.61,
-      "confidence": 0.67,
-      "model_label": "Demo"
+      "home_team": "Manchester United",
+      "away_team": "Manchester City",
+      "kickoff": "2026-09-13T15:30:00Z",
+      "home_win": 0.306,
+      "draw": 0.243,
+      "away_win": 0.451,
+      "first_half_btts": 0.27,
+      "second_half_btts": 0.41,
+      "predicted_score": "1-2",
+      "confidence": 0.69,
+      "model_label": "Form + Opta"
     }
   ],
   "teams": [
-    {"team":"Arsenal","matches":10,"goals_for_avg":2.1,"goals_against_avg":0.9,"first_half_btts_rate":0.30,"second_half_btts_rate":0.50,"full_match_btts_rate":0.60,"form":"G G B G M"},
-    {"team":"Manchester City","matches":10,"goals_for_avg":1.9,"goals_against_avg":1.1,"first_half_btts_rate":0.40,"second_half_btts_rate":0.50,"full_match_btts_rate":0.70,"form":"G B G M G"},
-    {"team":"Liverpool","matches":10,"goals_for_avg":2.2,"goals_against_avg":1.0,"first_half_btts_rate":0.40,"second_half_btts_rate":0.60,"full_match_btts_rate":0.70,"form":"G G G B G"},
-    {"team":"Chelsea","matches":10,"goals_for_avg":1.7,"goals_against_avg":1.2,"first_half_btts_rate":0.30,"second_half_btts_rate":0.50,"full_match_btts_rate":0.60,"form":"B G M G B"}
+    {
+      "team": "Coventry City",
+      "matches": 3,
+      "goals_for_avg": 0.00,
+      "goals_against_avg": 1.67,
+      "first_half_btts_rate": null,
+      "second_half_btts_rate": null,
+      "full_match_btts_rate": 0.00,
+      "form": "M M M"
+    },
+    {
+      "team": "Brighton & Hove Albion",
+      "matches": 3,
+      "goals_for_avg": 2.67,
+      "goals_against_avg": 1.67,
+      "first_half_btts_rate": null,
+      "second_half_btts_rate": null,
+      "full_match_btts_rate": 0.67,
+      "form": "G M B"
+    },
+    {
+      "team": "Manchester United",
+      "matches": 3,
+      "goals_for_avg": 2.33,
+      "goals_against_avg": 2.00,
+      "first_half_btts_rate": null,
+      "second_half_btts_rate": null,
+      "full_match_btts_rate": 0.67,
+      "form": "M G B"
+    },
+    {
+      "team": "Manchester City",
+      "matches": 3,
+      "goals_for_avg": 2.33,
+      "goals_against_avg": 0.67,
+      "first_half_btts_rate": null,
+      "second_half_btts_rate": null,
+      "full_match_btts_rate": 0.67,
+      "form": "G G G"
+    }
   ]
 }
