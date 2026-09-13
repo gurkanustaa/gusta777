@@ -1,6 +1,6 @@
 {
   "mode": "demo",
-  "generated_at": "2026-09-13T10:30:00+03:00",
+  "generated_at": "2026-09-13T07:30:00Z",
   "model": "heuristic-v0",
   "league": {
     "matches": 24,
@@ -12,7 +12,7 @@
     {
       "home_team": "Arsenal",
       "away_team": "Manchester City",
-      "kickoff_label": "Demo maç kartı",
+      "kickoff": "2026-09-19T14:00:00Z",
       "home_win": 0.39,
       "draw": 0.28,
       "away_win": 0.33,
@@ -24,7 +24,7 @@
     {
       "home_team": "Liverpool",
       "away_team": "Chelsea",
-      "kickoff_label": "Demo maç kartı",
+      "kickoff": "2026-09-20T15:30:00Z",
       "home_win": 0.51,
       "draw": 0.25,
       "away_win": 0.24,
