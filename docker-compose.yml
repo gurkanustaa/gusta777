@@ -1,0 +1,21 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: premier_predictor_postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-premier_predictor}
+      POSTGRES_USER: ${POSTGRES_USER:-premier}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-premier}
+    ports:
+      - "${POSTGRES_PORT:-5432}:5432"
+    volumes:
+      - premier_predictor_pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-premier} -d ${POSTGRES_DB:-premier_predictor}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  premier_predictor_pgdata:
