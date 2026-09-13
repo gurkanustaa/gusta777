@@ -23,6 +23,27 @@ def score(f, description, location):
     return None
 
 
+def kickoff_iso(value):
+    """Normalize Sportmonks kickoff time as timezone-aware ISO text.
+
+    Sportmonks fixture timestamps without an explicit offset are treated as UTC;
+    the browser later renders them in Europe/Istanbul.
+    """
+    if not value:
+        return None
+    text = str(value).strip().replace("Z", "+00:00")
+    try:
+        dt = datetime.fromisoformat(text)
+    except ValueError:
+        try:
+            dt = datetime.strptime(text, "%Y-%m-%d %H:%M:%S")
+        except ValueError:
+            return str(value)
+    if dt.tzinfo is None:
+        dt = dt.replace(tzinfo=timezone.utc)
+    return dt.astimezone(timezone.utc).isoformat().replace("+00:00", "Z")
+
+
 def load(client, start, end):
     rows = []
     for a, b in date_chunks(start, end, 100):
@@ -82,7 +103,7 @@ def main():
         if not h or not a: continue
         hp, ap = snaps.get(h["id"],snapshot([])), snaps.get(a["id"],snapshot([]))
         p, fh, sh, conf = probs(hp,ap,lfh,lsh)
-        upcoming.append({"match_id":f.get("id"),"home_team":h.get("name"),"away_team":a.get("name"),"kickoff_label":f.get("starting_at","").replace("T"," ")[:16],"home_win":p[0],"draw":p[1],"away_win":p[2],"first_half_btts":fh,"second_half_btts":sh,"confidence":conf,"model_label":"Trend v0"})
+        upcoming.append({"match_id":f.get("id"),"home_team":h.get("name"),"away_team":a.get("name"),"kickoff":kickoff_iso(f.get("starting_at")),"home_win":p[0],"draw":p[1],"away_win":p[2],"first_half_btts":fh,"second_half_btts":sh,"confidence":conf,"model_label":"Trend v0"})
         if len(upcoming) == 10: break
     teams = [{"team":names.get(k,str(k)),"matches":v["n"],"goals_for_avg":v["gf"],"goals_against_avg":v["ga"],"first_half_btts_rate":v["fh"],"second_half_btts_rate":v["sh"],"full_match_btts_rate":v["full"],"form":v["form"]} for k,v in sorted(snaps.items(), key=lambda x:names.get(x[0],""))]
     payload = {"mode":"live","generated_at":datetime.now(timezone.utc).isoformat(),"model":"trend-v0","league":{"matches":n,"goals_per_match":sum(x["gf"]+x["ga"] for x in completed)/n if n else 0,"first_half_btts_rate":lfh,"second_half_btts_rate":lsh},"matches":upcoming,"teams":teams}
