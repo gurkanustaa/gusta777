@@ -1,0 +1,43 @@
+{
+  "mode": "demo",
+  "generated_at": "2026-09-13T10:30:00+03:00",
+  "model": "heuristic-v0",
+  "league": {
+    "matches": 24,
+    "goals_per_match": 2.88,
+    "first_half_btts_rate": 0.29,
+    "second_half_btts_rate": 0.42
+  },
+  "matches": [
+    {
+      "home_team": "Arsenal",
+      "away_team": "Manchester City",
+      "kickoff_label": "Demo maç kartı",
+      "home_win": 0.39,
+      "draw": 0.28,
+      "away_win": 0.33,
+      "first_half_btts": 0.34,
+      "second_half_btts": 0.56,
+      "confidence": 0.62,
+      "model_label": "Demo"
+    },
+    {
+      "home_team": "Liverpool",
+      "away_team": "Chelsea",
+      "kickoff_label": "Demo maç kartı",
+      "home_win": 0.51,
+      "draw": 0.25,
+      "away_win": 0.24,
+      "first_half_btts": 0.41,
+      "second_half_btts": 0.61,
+      "confidence": 0.67,
+      "model_label": "Demo"
+    }
+  ],
+  "teams": [
+    {"team":"Arsenal","matches":10,"goals_for_avg":2.1,"goals_against_avg":0.9,"first_half_btts_rate":0.30,"second_half_btts_rate":0.50,"full_match_btts_rate":0.60,"form":"G G B G M"},
+    {"team":"Manchester City","matches":10,"goals_for_avg":1.9,"goals_against_avg":1.1,"first_half_btts_rate":0.40,"second_half_btts_rate":0.50,"full_match_btts_rate":0.70,"form":"G B G M G"},
+    {"team":"Liverpool","matches":10,"goals_for_avg":2.2,"goals_against_avg":1.0,"first_half_btts_rate":0.40,"second_half_btts_rate":0.60,"full_match_btts_rate":0.70,"form":"G G G B G"},
+    {"team":"Chelsea","matches":10,"goals_for_avg":1.7,"goals_against_avg":1.2,"first_half_btts_rate":0.30,"second_half_btts_rate":0.50,"full_match_btts_rate":0.60,"form":"B G M G B"}
+  ]
+}
