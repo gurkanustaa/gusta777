@@ -3,7 +3,7 @@ from __future__ import annotations
 import argparse
 import json
 import os
-from datetime import date, datetime, timedelta, timezone
+from datetime import date, timedelta
 from decimal import Decimal, InvalidOperation
 
 import psycopg
@@ -350,8 +350,8 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--lookback-days",
         type=int,
-        default=int(os.getenv("ETL_LOOKBACK_DAYS", "100")),
-        help="Days to load when --start-date is omitted (default: ETL_LOOKBACK_DAYS or 100)",
+        default=int(os.getenv("ETL_LOOKBACK_DAYS", "365")),
+        help="Days to load when --start-date is omitted (default: ETL_LOOKBACK_DAYS or 365)",
     )
     parser.add_argument(
         "--chunk-days",
