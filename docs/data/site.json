@@ -1,6 +1,6 @@
 {
   "mode": "live",
-  "generated_at": "2026-09-13T08:00:00Z",
+  "generated_at": "2026-09-13T08:10:00Z",
   "model": "form-poisson-v1",
   "source_note": "13 Eylül 2026 gerçek Premier League fikstürü; tahminler güncel lig formu ve gol performansından türetilmiştir.",
   "league": {
@@ -17,6 +17,7 @@
       "home_win": 0.18,
       "draw": 0.27,
       "away_win": 0.55,
+      "over_2_5": 0.49,
       "first_half_btts": 0.14,
       "second_half_btts": 0.24,
       "predicted_score": "0-2",
@@ -30,11 +31,12 @@
       "home_win": 0.306,
       "draw": 0.243,
       "away_win": 0.451,
+      "over_2_5": 0.59,
       "first_half_btts": 0.27,
       "second_half_btts": 0.41,
       "predicted_score": "1-2",
       "confidence": 0.69,
-      "model_label": "Form + Opta"
+      "model_label": "Form + Poisson"
     }
   ],
   "teams": [
